@@ -69,8 +69,6 @@ systemctl daemon-reload
 systemctl enable kubelet
 systemctl restart kubelet
 
-echo "start kubeadm"
-kubeadm init --pod-network-cidr 10.0.0.0/16
 
 
 
