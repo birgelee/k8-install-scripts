@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Docker install"
+
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl
@@ -16,4 +18,7 @@ sudo apt-get update
 
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+echo "Disable Swap"
 
+swapoff -a
+sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
